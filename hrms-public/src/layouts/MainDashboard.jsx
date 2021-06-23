@@ -1,4 +1,169 @@
 import React from 'react'
-/*import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row,Col } from 'react-bootstrap'; */
+import imgLogo from '../assets/images/logo.png';
+import { FaFacebookSquare, FaTwitterSquare, FaInstagramSquare } from "react-icons/fa";
+import Navi from './Navi';
+import SearchArea from './SerachArea';
+import Sidebar from './Sidebar';
+import JobPostingList from '../pages/JobPostingList';
+export default function MainDashboard() {
+
+    return (
+        <div>
+           
+           <Navi/>
+         
+            <SearchArea/>
+
+            <div class="prising_area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="section_title text-center mb-100">
+
+                                <div class="container-xxl">
+                                    <div class="row">
+                                        <div class="col-lg-3 d-none d-lg-block">
+
+                                            <Sidebar/>
+
+                                        </div>
+                                       
+                                        <div class="col-lg-9">
+
+                                            <JobPostingList/>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <div class="lets_launch launch_bg_1 overlay2">
+                <div class="launch_text text-center">
+                    <h3>İş İlanları Senin İçin Listelendi</h3>
+                    <p>Human Resources Management System</p>
+                    <p>İlanlara başvurabilmek ilan verebilmek gelecek ve kariyer anlamında ilk adımı atabilmek için üye
+                        olabilirsin.</p>
+                    <div class="chat">
+                        <a class="boxed_btn_green" href="/#">
+                            <i class="flaticon-chat"></i>
+                            <span>Üye Ol</span>
+                        </a>
+                        <a class="boxed_btn_green2" href="/#">
+                            <span>Giriş Yap</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="footer">
+                <div class="footer_top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-3 col-md-6 col-lg-3">
+                                <div class="footer_widget">
+                                    <div class="footer_logo">
+                                        <a href="/#">
+                                            <img src={imgLogo} alt="imgLogo" />
+                                        </a>
+                                    </div>
+                                    <p class="footer_text doanar"> <a class="first" href="/#">+90 54* *** ** **
+                                    </a> <br />
+                                        <a href="/#">yukselcanozdemir@gmail.com</a>
+                                    </p>
+                                    <div class="socail_links">
+                                        <ul>
+                                            <li>
+                                                <a href="/#">
+                                                    <FaFacebookSquare />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/#">
+                                                    <FaTwitterSquare />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/#">
+                                                    <FaInstagramSquare />
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6 col-lg-3">
+                                <div class="footer_widget">
+                                    <h3 class="footer_title">
+                                        Aday
+                                    </h3>
+                                    <ul>
+                                        <li><a href="/#">Üye Ol</a></li>
+                                        <li><a href="/#">Giriş Yap</a></li>
+                                        <li><a href="/#">İlan Ara</a></li>
+                                        <li><a href="/#">Profil</a></li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-md-6 col-lg-2">
+                                <div class="footer_widget">
+                                    <h3 class="footer_title">
+                                        İş Veren
+                                    </h3>
+                                    <ul>
+                                        <li><a href="/#">Üye Ol</a></li>
+                                        <li><a href="/#">Giriş Yap</a></li>
+                                        <li><a href="/#">İlan Ver</a></li>
+                                        <li><a href="/#">Profil</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-6 col-lg-4">
+                                <div class="footer_widget">
+                                    <h3 class="footer_title">
+                                        Ara
+                                    </h3>
+                                    <form action="/#" class="newsletter_form">
+                                        <input type="text" placeholder="İlan yada pozisyon giriniz" />
+                                        <button type="submit">Ara</button>
+                                    </form>
+                                    <p class="newsletter_text">Üye olmadan ilanlara başvuramazsınız</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copy-right_text">
+                    <div class="container">
+                        <div class="footer_border"></div>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="copy_right text-center">
+                                    Copyright &copy;
+                                    2021 All rights reserved | This
+                                    template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
+                                        href="https://www.github.com/yuksel-can" rel="noopener noreferrer" target="_blank">Can Yüksel</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+
+
+
+
+        </div>
+    )
+}
+
 
