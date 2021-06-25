@@ -5,8 +5,8 @@ import MainDashboard from './layouts/MainDashboard';
 function App() {
   return (
     <div className="App">
-      <MainDashboard/>
-     </div>
+      <MainDashboard />
+    </div>
 
   );
 }
