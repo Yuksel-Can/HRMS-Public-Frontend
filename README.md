@@ -14,6 +14,26 @@
 ![alt workingPrincipleUmlComponentDiagram](https://github.com/Yuksel-Can/HRMS-Public-Frontend/blob/main/uml%20diagrams/working%20principle%20uml%20component%20diagram.jpg)
 ## Advanced Uml Component Diagram
 ![alt advandecUmlComponentDiagram](https://github.com/Yuksel-Can/HRMS-Public-Frontend/blob/main/uml%20diagrams/advanced%20uml%20component%20diagram.jpg)
+</br>
+
+<hr>
+
+</br>
+
+<div align="center"> <h2> :computer: HRMS Preview :computer: </h2> </div>
+
+<br>
+
+## Navi
+![alt navi](https://github.com/Yuksel-Can/HRMS-Public-Frontend/blob/main/screenshots/main/navi.jpg)
+## SearchArea
+![alt searchArea](https://github.com/Yuksel-Can/HRMS-Public-Frontend/blob/main/screenshots/main/searchArea.jpg)
+## Slider And JobPostingList
+![alt jobPostingList](https://github.com/Yuksel-Can/HRMS-Public-Frontend/blob/main/screenshots/main/center.jpg)
+## Bottom Section
+![alt bottomSection](https://github.com/Yuksel-Can/HRMS-Public-Frontend/blob/main/screenshots/main/bottomSection.jpg)
+## Footer
+![alt footer](https://github.com/Yuksel-Can/HRMS-Public-Frontend/blob/main/screenshots/main/footer.jpg)
 
 # Getting Started with Create React App
 
