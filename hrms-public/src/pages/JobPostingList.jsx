@@ -8,13 +8,13 @@ export default function JobPostingList() {
 
     useEffect(() => {
         let jobPostingService = new JobPostingService()
-        jobPostingService.getAllJobPostingSortByDateDesc().then(result => setJobPostings(result.data.data))
-    })
+        jobPostingService.getVisibleJobPosting().then(result => setJobPostings(result.data.data))
+    },[])
 
     return (
         <div>
 
-            <div class="center">
+            <div class="center rounded">
                 <strong>
                     <h4>55 İş İlanı</h4>
                 </strong>
@@ -47,7 +47,7 @@ export default function JobPostingList() {
                                     <tr>
                                         <th class="userlist1" ><span>İlan</span></th>
                                         <th class="userlist2" ><span>Bitiş Tarihi</span></th>
-                                        <th class="userlist3" ><span>Pozisyon</span></th>
+                                        <th class="userlist3" ><span>İstihdam</span></th>
                                         <th class="userlist4" ><span>Pozisyon </span></th>
                                         <th class="userlist5" ><span>Şehir</span></th>
 
@@ -132,7 +132,7 @@ export default function JobPostingList() {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>
+                                        <td >
                                             <img src="https://bootdey.com/img/Content/avatar/avatar3.png"
                                                 alt="avatar3" />
                                             <a href="/#" class="user-link">Geliştirici
