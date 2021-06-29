@@ -1,7 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import imgLogo from '../../assets/images/logo.png';
+import SignedIn from './SignedIn';
+import SignedOut from './SignedOut';
+import { Link, NavLink, useHistory } from 'react-router-dom'
 
 export default function Navi() {
+
+
+    const[isAuthenticated, setIsAuthenticated] = useState(true);
+    /*history*/
+    const history = useHistory();
+    /*history*/
+
+    function handleSignOut(params){
+        setIsAuthenticated(false);
+        history.push("/");
+    }
+
+    function handleSignIn(params){
+        setIsAuthenticated(true);
+    }
 
     return (
         <div>
@@ -44,18 +62,11 @@ export default function Navi() {
 
                                 </div>
                                 <div class="col-xl-3 col-lg-3 d-none d-lg-block">
-                                    <div class="log_chat_area d-flex align-items-center">
-                                        <a href="#test-form" class="login popup-with-form">
-                                            <i class="flaticon-user"></i>
-                                            <span>Giriş Yap</span>
-                                        </a>
-                                        <div class="live_chat_btn">
-                                            <a class="boxed_btn_green" href="/#">
-                                                <i class="flaticon-chat"></i>
-                                                <span>Üye Ol</span>
-                                            </a>
-                                        </div>
-                                    </div>
+                                    
+                                    {
+                                        isAuthenticated?<SignedIn signOut={handleSignOut}/>:<SignedOut signIn={handleSignIn}/>
+                                    }
+
                                 </div>
                                 <div class="col-12">
                                     <div class="mobile_menu d-block d-lg-none"></div>
