@@ -7,17 +7,17 @@ import { Link, NavLink, useHistory } from 'react-router-dom'
 export default function Navi() {
 
 
-    const[isAuthenticated, setIsAuthenticated] = useState(true);
+    const [isAuthenticated, setIsAuthenticated] = useState(true);
     /*history*/
     const history = useHistory();
     /*history*/
 
-    function handleSignOut(params){
+    function handleSignOut(params) {
         setIsAuthenticated(false);
         history.push("/");
     }
 
-    function handleSignIn(params){
+    function handleSignIn(params) {
         setIsAuthenticated(true);
     }
 
@@ -31,7 +31,7 @@ export default function Navi() {
                             <div class="row align-items-center no-gutters">
                                 <div class="col-xl-2 col-lg-2">
                                     <div class="logo-img">
-                                        <a href="index.html">
+                                        <a href="#/">
                                             <img src={imgLogo} alt="imgLogo" />
 
                                         </a>
@@ -41,7 +41,7 @@ export default function Navi() {
                                     <div class="main-menu  d-none d-lg-block">
                                         <nav >
                                             <ul id="navigation">
-                                                <li><a class="active" href="index.html">Ana Sayfa</a></li>
+                                                <li><a /**class="active"**/><NavLink exact to="/"> Ana Sayfa</NavLink></a></li>
                                                 <li><a href="package.html">İlan Ara</a></li>
                                                 <li><a href="/#">Profil <i class="ti-angle-down"></i></a>
                                                     <ul class="submenu">
@@ -62,9 +62,9 @@ export default function Navi() {
 
                                 </div>
                                 <div class="col-xl-3 col-lg-3 d-none d-lg-block">
-                                    
+
                                     {
-                                        isAuthenticated?<SignedIn signOut={handleSignOut}/>:<SignedOut signIn={handleSignIn}/>
+                                        isAuthenticated ? <SignedIn signOut={handleSignOut} /> : <SignedOut signIn={handleSignIn} />
                                     }
 
                                 </div>

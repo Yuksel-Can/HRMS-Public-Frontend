@@ -1,7 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 
-export default function SignedOut() {
+export default function SignedOut(props) {
 
 
     return (
@@ -9,9 +10,9 @@ export default function SignedOut() {
 
 
             <div class="log_chat_area d-flex align-items-center">
-                <a href="#test-form" class="login popup-with-form">
+                <a  class="login popup-with-form">
                     <i class="flaticon-user"></i>
-                    <span>Giriş Yap</span>
+                    <span><Link to={'/login1'}> Giriş Yap</Link></span>
                 </a>
                 <div class="live_chat_btn">
                     <a class="boxed_btn_green" href="/#">

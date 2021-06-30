@@ -8,6 +8,7 @@ import './assets/css/bootstrap.min.css';
 import './assets/css/font-awesome.min.css';
 //import '../node_modules/css-loader/dist/cjs.js??ref--5-oneOf-4-1!./node_modules/postcss-loader/src??postcss!./src/assets/css/font-awesome.min.css';
 import './assets/css/style.css';
+import { BrowserRouter } from 'react-router-dom';
 ReactDOM.render(
   /*
   
@@ -16,7 +17,8 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
   */
- <App/>, document.getElementById('root')
+ //<App/>, document.getElementById('root')
+ <BrowserRouter><App/></BrowserRouter>, document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

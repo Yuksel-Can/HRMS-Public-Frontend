@@ -26,7 +26,7 @@ body {
   font-style: normal;
   background-color: #cecece4d;
   box-sizing: border-box !important;
-	font:600 16px/18px 'Open Sans',sans-serif;
+	font:600 16px/18px 'Open Sans',sans-serif !important;
 }
 
 /* line 11, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_reset.scss */
@@ -115,9 +115,6 @@ p {
 /* line 68, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_reset.scss */
 label {
   color: #7e7e7e;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 400;
 }
 
 /* line 74, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_reset.scss */
@@ -7174,7 +7171,9 @@ h6 {
 }
 .container-xxl .center h4{
   margin-bottom: 30px !important; 
-  font-size: 1.5em;
+  padding-left: 15px;
+  font-size: 2.5em;
+	font:600 16px/18px 'Open Sans',sans-serif;
 }
 .container-xxl .center h5{
   font-size: 1.5em;
@@ -7431,8 +7430,8 @@ color: #a75d54;
 
 /****************LOGİN PAGE***************************/
 .mt{
-  margin-top: 100px;
-  
+  margin-top: 80px;
+
 }
 body{
 	margin:0;
@@ -7449,7 +7448,7 @@ a{color:inherit;text-decoration:none}
 	width:100%;
 	margin:auto;
 	max-width:525px;
-	min-height:670px;
+	min-height:600px;
 	position:relative;
 	background:url('../images/img-login.jpg') no-repeat center;
 	box-shadow:0 12px 15px 0 rgba(118, 50, 163, 0.299),0 17px 50px 0 rgba(0, 0, 0, 0.286);
@@ -7458,7 +7457,7 @@ a{color:inherit;text-decoration:none}
 	width:100%;
 	height:100%;
 	position:absolute;
-	padding:90px 70px 50px 70px;
+	padding:80px 30px 0px 30px;
 	background:#390e50d2;
 }
 .login-html .sign-in-htm,
@@ -7493,7 +7492,7 @@ a{color:inherit;text-decoration:none}
 .login-html .sign-in:checked + .tab,
 .login-html .sign-up:checked + .tab{
 	color:#fff;
-	border-color:#1161ee;
+	border-color:#00D363;
 }
 .login-form{
 	min-height:345px;
@@ -7675,3 +7674,131 @@ a{color:inherit;text-decoration:none}
   background-color: #00d362f3;
   color:fff;
 }
+/***********************Formik Youtube****************************/
+.container2 {
+  width: 80%;
+  height: 85vh;
+  margin: 70px auto;
+  display: flex;
+  border-radius: 10px;
+  background: #3a36e4; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #3a36e4,
+    #acc3fd
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #3a36e4,
+    #acc3fd
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+h1 {
+  font-size: 55px;
+  letter-spacing: 2px;
+  font-family: "Nerko One", cursive;
+}
+
+.brand-box2 {
+  flex: 1 50%;
+  display: flex;
+  color: #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+
+.magic-form2 {
+  flex: 1 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 20px;
+  font-size: 15px;
+  color: #3f3f40;
+  background: rgba(255, 255, 255, 0.191);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  text-align: left;
+}
+.magic-form2 h3{
+  font-size: 1em;
+}
+
+.magic-form2 .input {
+  padding: 8px 6px;
+  font-size: 14px;
+  width: 75%;
+  display: block;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  display: inline-block;
+  margin: 10px 0;
+  background-color: rgba(255, 255, 255, 0.831);
+}
+
+.magic-form2 input:focus {
+  border-color: #2cbb16;
+  outline: none;
+}
+
+.magic-form2 .input-feedback {
+  color: red;
+  margin-top: 0.25rem;
+  font-size: 15px;
+  text-shadow: 0px 0px 5px rgb(255, 255, 255);
+  
+}
+
+
+.magic-form2 .checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.magic-form2 .checkbox-label {
+  display: inline;
+  font-size: 12px;
+}
+
+.magic-form2 button {
+  max-width: 150px;
+  margin: 20px 0;
+  padding: 8px 12px;
+  border-style: none;
+  border-radius: 5px;
+  background-color: #2cbb16;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  font-size: 17px;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+}
+
+.magic-form2 button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed !important;
+}
+
+.magic-form2 .topMargin {
+  margin-top: 1rem;
+}
+.magic-form2 label{
+  display: block;
+  color: #fff;
+  display: inline-block;
+  width: 25%;
+  letter-spacing: 1px;
+}
+.magic-form2 label:last-child{
+  display: block;
+  color: #fff;
+  display: inline-block;
+  width: 80%;
+  letter-spacing: 1px;
+  padding-left: 10px;
+  margin-top: 10px;
+}
+/***********************Formik Youtube****************************/

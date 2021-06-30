@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import navIcon from '../../assets/images/pp-mini.jpg';
 
 export default function SignedIn(props) {
@@ -20,7 +20,7 @@ export default function SignedIn(props) {
                             <NavDropdown.Item variant="info" href="#action/3.1" defaultActive>Profil</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">Öz Geçmişler</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.3">Ayarlar</NavDropdown.Item>
-                            <NavDropdown.Item onClick={props.signOut}>Yardım</NavDropdown.Item>
+                            <NavDropdown.Item >Yardım</NavDropdown.Item>
                             <NavDropdown.Divider />
                             <NavDropdown.Item onClick={props.signOut}>Çıkış Yap</NavDropdown.Item>
                         </NavDropdown>
