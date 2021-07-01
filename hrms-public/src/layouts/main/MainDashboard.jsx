@@ -9,6 +9,7 @@ import MainContext from './MainContext';
 import LoginCandidateForm from '../loginPages/LoginCandidateForm';
 import LoginEmployerForm from '../loginPages/LoginEmployerForm';
 import LoginDashboard from '../loginPages/LoginDashboard';
+import JobPostingDetailDashboard from '../productDetail/JobPostingDetailDashboard';
 export default function MainDashboard() {
 
 
@@ -38,9 +39,12 @@ export default function MainDashboard() {
 
 
             <Navi />
+
+
             <Route exact path="/" component={MainContext} />
             <Route exact path="/loginCandidate" component={LoginDashboard} />
             <Route exact path="/loginEmployer" component={LoginDashboard} />
+            <Route exact path="/jobpostings/:id" component={JobPostingDetailDashboard} />
 
             <Footer />
 

@@ -1,32 +1,38 @@
 import React from 'react'
+import JobPostingDetailRight from '../../pages/JobPostingDetailRight'
+import JobPostingList from '../../pages/JobPostingList'
 import BottomSection from '../default/BottomSection'
 import Footer from '../default/Footer'
 import Navi from '../default/Navi'
 import SearchArea from '../default/SerachArea'
+import Sidebar from '../main/Sidebar'
+import JobPostingDetailLeft from './JobPostingDetailLeft'
 
 export default function JobPostingDetailDashboard() {
     return (
         <div>
             <Navi />
-            <SearchArea />
 
-            <div class="prising_area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="section_title text-center mb-100">
-                                <div class="container-xxl">
-                                    <div class="row">
-                                        <div class="col-lg-3 d-none d-lg-block">
+            <div className="mt-100">
 
-                                            <Sidebar />
+                <div class="prising_area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="section_title text-center mb-100">
+                                    <div class="container-xxl">
+                                        <div class="row">
+                                            <div class="col-lg-3 d-none d-lg-block">
 
-                                        </div>
+                                                <JobPostingDetailLeft />
 
-                                        <div class="col-lg-9">
+                                            </div>
 
-                                            <JobPostingList />
+                                            <div class="col-lg-9">
 
+                                                <JobPostingDetailRight />
+
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

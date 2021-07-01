@@ -62,7 +62,9 @@ export default function JobPostingList() {
                                                         alt="avatar1" />
                                                     <a href="/#" class="user-link">
 
+                                                        
                                                         {jobPosting.description}
+
 
                                                     </a>
                                                     <span class="user-subhead">{jobPosting.employer.companyName}</span>
