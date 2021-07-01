@@ -6,7 +6,9 @@ import { toast, ToastContainer } from 'react-toastify';
 //import LoginPopup from '../default/LoginPopup';
 import { Route } from 'react-router-dom';
 import MainContext from './MainContext';
-import LoginCandidatePage from '../loginPages/LoginCandidatePage';
+import LoginCandidateForm from '../loginPages/LoginCandidateForm';
+import LoginEmployerForm from '../loginPages/LoginEmployerForm';
+import LoginDashboard from '../loginPages/LoginDashboard';
 export default function MainDashboard() {
 
 
@@ -37,7 +39,8 @@ export default function MainDashboard() {
 
             <Navi />
             <Route exact path="/" component={MainContext} />
-            <Route exact path="/login1" component={LoginCandidatePage} />
+            <Route exact path="/loginCandidate" component={LoginDashboard} />
+            <Route exact path="/loginEmployer" component={LoginDashboard} />
 
             <Footer />
 

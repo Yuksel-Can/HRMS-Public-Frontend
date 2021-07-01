@@ -12,12 +12,12 @@ export default function SignedOut(props) {
             <div class="log_chat_area d-flex align-items-center">
                 <a  class="login popup-with-form">
                     <i class="flaticon-user"></i>
-                    <span><Link to={'/login1'}> Giriş Yap</Link></span>
+                    <span><Link to={'/loginCandidate'}> Giriş Yap</Link></span>
                 </a>
                 <div class="live_chat_btn">
-                    <a class="boxed_btn_green" href="/#">
+                    <a class="boxed_btn_green">
                         <i class="flaticon-chat"></i>
-                        <span>Üye Ol</span>
+                        <span><Link to={'/loginCandidate'}>Üye Ol</Link></span>
                     </a>
                 </div>
             </div>

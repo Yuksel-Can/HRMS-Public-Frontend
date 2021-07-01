@@ -32,7 +32,7 @@ export default function Navi() {
                                 <div class="col-xl-2 col-lg-2">
                                     <div class="logo-img">
                                         <a href="#/">
-                                            <img src={imgLogo} alt="imgLogo" />
+                                        <NavLink exact to="/"><img src={imgLogo} alt="imgLogo" /></NavLink>
 
                                         </a>
                                     </div>
