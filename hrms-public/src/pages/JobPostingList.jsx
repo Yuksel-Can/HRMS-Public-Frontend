@@ -1,6 +1,7 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaMapMarkedAlt, } from "react-icons/fa";
 import JobPostingService from "../services/jobPostingService";
+import { Link } from 'react-router-dom';
 
 export default function JobPostingList() {
 
@@ -9,7 +10,7 @@ export default function JobPostingList() {
     useEffect(() => {
         let jobPostingService = new JobPostingService()
         jobPostingService.getVisibleJobPosting().then(result => setJobPostings(result.data.data))
-    },[])
+    }, [])
 
     return (
         <div>
@@ -61,25 +62,26 @@ export default function JobPostingList() {
                                                     <img src="https://bootdey.com/img/Content/avatar/avatar1.png"
                                                         alt="avatar1" />
                                                     <a href="/#" class="user-link">
-
-                                                        
+                                                        {/*   
+                                                        <Link to={'/jobpostings/${jobPosting.id}'}>
                                                         {jobPosting.description}
-
-
+                                                        </Link>
+                                                        */}
+                                                        <Link to={`/jobpostings/${jobPosting.id}`} >{jobPosting.description}</Link>
                                                     </a>
                                                     <span class="user-subhead">{jobPosting.employer.companyName}</span>
                                                 </td>
                                                 <td>
-                                                    
+
                                                     {jobPosting.endedDate}
-                                                  
+
                                                 </td>
                                                 <td class="text-center">
 
                                                     {/*if(jobPosting.visible){
                                                         deneme
                                                     }*/}
-                                                    
+
                                                     {/*jobPosting.visible*/}
                                                     {jobPosting.openPosition}
                                                     {/* <span class="label label-default">Aktif</span> */}
@@ -87,7 +89,7 @@ export default function JobPostingList() {
                                                 <td>
 
                                                     {jobPosting.jobTitle.title}
-                                                  
+
                                                 </td>
                                                 <td class="td_city">
                                                     <span class="fa-stack">

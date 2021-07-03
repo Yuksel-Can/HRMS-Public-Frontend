@@ -17,4 +17,7 @@ export default class JobPostingService{
     getAllJobPostingSortByDateAsc(){
         return axios.get("http://localhost:8080/api/jobposting/getAllSortedByAndDateASC")
     }
+    findByIsVisibleAndId(id){
+        return axios.get("http://localhost:8080/api/jobposting/findByIsVisibleAndId?id="+id)
+    }
 }
