@@ -9,7 +9,9 @@ import MainContext from './MainContext';
 import LoginCandidateForm from '../loginPages/LoginCandidateForm';
 import LoginEmployerForm from '../loginPages/LoginEmployerForm';
 import LoginDashboard from '../loginPages/LoginDashboard';
-import JobPostingDetailDashboard from '../productDetail/JobPostingDetailDashboard';
+import JobPostingDetailDashboard from '../jobPostingPages/JobPostingDetailDashboard';
+import { useEffect } from 'react';
+import EmployerProfile from '../employer/EmployerProfile';
 export default function MainDashboard() {
 
 
@@ -32,6 +34,10 @@ export default function MainDashboard() {
         });
     }
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     return (
 
 
@@ -45,7 +51,7 @@ export default function MainDashboard() {
             <Route exact path="/loginCandidate" component={LoginDashboard} />
             <Route exact path="/loginEmployer" component={LoginDashboard} />
             <Route exact path="/jobpostings/:id" component={JobPostingDetailDashboard} />
-
+            <Route exact path="/employerProfile/:id" component={EmployerProfile} />
             <Footer />
 
 

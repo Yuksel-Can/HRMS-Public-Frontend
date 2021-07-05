@@ -5,8 +5,15 @@ import Sidebar from './Sidebar';
 import BottomSection from '../default/BottomSection';
 import JobPostingList from '../../pages/JobPostingList';
 import { Route } from 'react-router-dom';
+import { useEffect } from 'react';
 
 export default function MainContext() {
+    
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
+
     return (
         <div>
 

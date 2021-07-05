@@ -7436,6 +7436,9 @@ color: #a75d54;
 .mt-100{
   margin-top: 100px;
 }
+.mt-120{
+  margin-top: 120px;
+}
 body{
 	margin:0;
 	color:#6a6f8c;
@@ -8297,3 +8300,70 @@ a.btn, a.btn-social {
 .ls-3{
   letter-spacing: 3px;
 }
+/*********************EMPLOYER PROFİLE START**********************/
+.panel.panel-default {
+  border-top-width: 3px;
+  background-color: rgb(255, 255, 255);
+  text-align: left;
+}
+.pv-lg{
+  width: 70%;
+  width: auto;
+}
+.panel {
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.14),0 2px 2px 0 rgba(0,0,0,.098),0 1px 5px 0 rgba(0,0,0,.084);
+  border: 0;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+.panel .panel-body-left1 {
+  padding: 20px 20px;
+}
+.pb-left {
+  padding: 20px 40px;
+}
+.panel .panel-body-right {
+  padding: 40px 80px;
+}
+.thumb96 {
+  width: 96px!important;
+  height: 96px!important;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.thumb48 {
+  width: 48px!important;
+  height: 48px!important;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+.ng-pristine{
+  /*margin-left: 50px;*/
+}
+.ng-pristine input{
+  font-size: 12px;
+  margin-right: 50px;
+}
+
+.ng-pristine label{
+  font-size: 15px;
+  margin-top: 5px;
+}
+.btn-update{
+  text-align: center;
+  margin: auto;
+}
+.ng-pristine textarea{
+  font-size: 13px;
+  height: 150px;
+}
+.ng-pristine .agree{
+  font-size: 2px;
+  margin-right: 10px;
+  color: red;
+}
+.ng-pristine span{
+font-size: 12px;
+}
+/*********************EMPLOYER PROFİLE END**********************/
