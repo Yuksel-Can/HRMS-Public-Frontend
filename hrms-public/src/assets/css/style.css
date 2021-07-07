@@ -8294,6 +8294,9 @@ a.btn, a.btn-social {
 .fs-20{
   font-size: 20px;
 }
+.fs-30{
+  font-size: 30px;
+}
 .fw-700{
   font-weight: 700;
 }
@@ -8318,6 +8321,9 @@ a.btn, a.btn-social {
 }
 .panel .panel-body-left1 {
   padding: 20px 20px;
+}
+.panel .panel-title{
+  font-size: 22px !important;
 }
 .pb-left {
   padding: 20px 40px;
@@ -8349,6 +8355,7 @@ a.btn, a.btn-social {
 .ng-pristine label{
   font-size: 15px;
   margin-top: 5px;
+  width: 110%;
 }
 .btn-update{
   text-align: center;
@@ -8359,11 +8366,21 @@ a.btn, a.btn-social {
   height: 150px;
 }
 .ng-pristine .agree{
-  font-size: 2px;
+  font-size: 12px;
   margin-right: 10px;
   color: red;
 }
 .ng-pristine span{
 font-size: 12px;
+}
+.input-feedback {
+  color: #fff;
+  margin-top: 0.25rem;
+  font-size: 13px;
+  
+  background-color: #ff00003b;
+  border-radius: 5px;
+  padding: 4px 8px;
+  font-weight: 100;
 }
 /*********************EMPLOYER PROFİLE END**********************/
