@@ -41,11 +41,13 @@
 <div align="center"><h2> :low_brightness: All Pages Screenshots :low_brightness: </h2> </div>
 <div align="center"><h4> :low_brightness: Tüm Sayfalar Ekran Görüntüleri :low_brightness: </h4> </div>
 
-## Navi
+## Job Posting Detail Page
+![alt navi](https://github.com/Yuksel-Can/HRMS-Public-Frontend/blob/main/screenshots/jobPostingDetail/Job%20Posting%20Detail%20Page1.jpg)
+![alt navi](https://github.com/Yuksel-Can/HRMS-Public-Frontend/blob/main/screenshots/jobPostingDetail/Job%20Posting%20Detail%20Page2.jpg)
+![alt navi](https://github.com/Yuksel-Can/HRMS-Public-Frontend/blob/main/screenshots/jobPostingDetail/jobPostingDetailAll.jpg)
+## Another
 ![alt navi](https://github.com/Yuksel-Can/HRMS-Public-Frontend/blob/main/screenshots/main/navi.jpg)
-## Navi
-![alt navi](https://github.com/Yuksel-Can/HRMS-Public-Frontend/blob/main/screenshots/main/navi.jpg)
-## Navi
+## Another
 ![alt navi](https://github.com/Yuksel-Can/HRMS-Public-Frontend/blob/main/screenshots/main/navi.jpg)
 
 
