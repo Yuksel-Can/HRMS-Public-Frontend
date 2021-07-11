@@ -6,6 +6,7 @@ import EmployerService from '../../services/employerService';
 import build from '../../assets/images/build.jpg';
 import { Formik } from 'formik';
 import * as Yup from "yup";
+import {Link} from 'react-router-dom';
 
 export default function EmployerProfile() {
 
@@ -26,10 +27,10 @@ export default function EmployerProfile() {
 
     return (
         <div>
-
+            
             <div class="mt-120">
 
-
+            
                 <div class="container bootstrap snippets bootdey">
                     <div class="row ng-scope">
                         <div class="col-md-4">
@@ -39,7 +40,7 @@ export default function EmployerProfile() {
                                     {/*https://www.bootdey.com/img/Content/avatar/avatar6.png */}
                                     <h3 class="m0 text-bold">Kodlama.İO</h3>
                                     <div class="mv-lg">
-                                        <p> Ankara'da bir yazılım şirketi </p>
+                                        <p> Ankara'da bir yazılım şirketi  </p>
                                     </div>
                                 </div>
                             </div>
@@ -88,7 +89,8 @@ export default function EmployerProfile() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="text-center mt-1"><a class="btn btn-warning" href="">Tümünü Görüntüle</a></div>
+                                    <div class="text-center mt-3"><a class="btn btn-outline-info" href="">Tümünü Görüntüle</a></div>
+                                    <div class="text-center mt-4"><a class="btn btn-success btn-lg w-100" href=""><Link to={`/employer/${employer.id}/newJobPosting/`}>Yeni İlan Oluştur</Link></a></div>
 
                                 </div>
                             </div>
@@ -246,7 +248,7 @@ export default function EmployerProfile() {
                                                         </div>
                                                         <div class="form-group">
                                                             <div class="col-sm-offset-2 col-sm-10 col-md-6 btn-update">
-                                                                <button class="btn btn-success w-100 fs-20 " type="submit" disabled={!dirty || isSubmitting} >Güncelle</button>
+                                                                <button class="btn btn-success w-100 fs-20 btn-lg" type="submit" disabled={!dirty || isSubmitting} >Güncelle</button>
                                                             </div>
                                                         </div>
 

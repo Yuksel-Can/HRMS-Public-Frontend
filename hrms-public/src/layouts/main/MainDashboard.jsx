@@ -12,6 +12,7 @@ import LoginDashboard from '../loginPages/LoginDashboard';
 import JobPostingDetailDashboard from '../jobPostingPages/JobPostingDetailDashboard';
 import { useEffect } from 'react';
 import EmployerProfile from '../employer/EmployerProfile';
+import CreateJobPosting from '../employer/CreateJobPosting';
 export default function MainDashboard() {
 
 
@@ -51,7 +52,8 @@ export default function MainDashboard() {
             <Route exact path="/loginCandidate" component={LoginDashboard} />
             <Route exact path="/loginEmployer" component={LoginDashboard} />
             <Route exact path="/jobpostings/:id" component={JobPostingDetailDashboard} />
-            <Route exact path="/employerProfile/:id" component={EmployerProfile} />
+            <Route exact path="/employer/:id/profile" component={EmployerProfile} />
+            <Route exact path="/employer/:id/newJobPosting" component={CreateJobPosting} />
             <Footer />
 
 
