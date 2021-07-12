@@ -35,6 +35,22 @@
 ## Footer
 ![alt footer](https://github.com/Yuksel-Can/HRMS-Public-Frontend/blob/main/screenshots/main/footer.jpg)
 
+<hr>
+
+
+<div align="center"><h2> :low_brightness: All Pages Screenshots :low_brightness: </h2> </div>
+<div align="center"><h4> :low_brightness: Tüm Sayfalar Ekran Görüntüleri :low_brightness: </h4> </div>
+
+## Job Posting Detail Page
+![alt navi](https://github.com/Yuksel-Can/HRMS-Public-Frontend/blob/main/screenshots/jobPostingDetail/Job%20Posting%20Detail%20Page1.jpg)
+![alt navi](https://github.com/Yuksel-Can/HRMS-Public-Frontend/blob/main/screenshots/jobPostingDetail/Job%20Posting%20Detail%20Page2.jpg)
+![alt navi](https://github.com/Yuksel-Can/HRMS-Public-Frontend/blob/main/screenshots/jobPostingDetail/jobPostingDetailAll.jpg)
+## Another
+![alt navi](https://github.com/Yuksel-Can/HRMS-Public-Frontend/blob/main/screenshots/main/navi.jpg)
+## Another
+![alt navi](https://github.com/Yuksel-Can/HRMS-Public-Frontend/blob/main/screenshots/main/navi.jpg)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
