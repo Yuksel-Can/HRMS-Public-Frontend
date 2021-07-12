@@ -4,20 +4,22 @@ import { useState } from 'react';
 import { useParams } from 'react-router-dom'
 import EmployerService from '../../services/employerService';
 import JobTitleService from '../../services/jobTitleService';
+import JobPostingService from '../../services/jobPostingService';
 import CityService from '../../services/cityService';
 import build from '../../assets/images/build.jpg';
-import { Formik } from 'formik';
+import { useFormik } from 'formik';
+import { Input, Button, Label, Form, Dropdown } from 'semantic-ui-react'
 import * as Yup from "yup";
 import { Link } from 'react-router-dom';
-import { Dropdown } from 'react-bootstrap';
+//import { Form, Dropdown } from 'react-bootstrap';
 
 export default function CreateJobPosting() {
 
     let { id } = useParams();
 
     const [employer, setEmployer] = useState({});
-    const [city, setCity] = useState({});
-    const [jobTitle, setJobTitle] = useState({});
+    const [cities, setCities] = useState([]);
+    const [jobTitle, setJobTitle] = useState([]);
 
     useEffect(() => {
         let employerService = new EmployerService()
@@ -25,7 +27,7 @@ export default function CreateJobPosting() {
 
 
         let cityService = new CityService()
-        cityService.getAllCity().then(result => setCity(result.data.data))
+        cityService.getAllCity().then(result => setCities(result.data.data))
 
         let jobTitleService = new JobTitleService()
         jobTitleService.getAllJobTitle().then(result => setJobTitle(result.data.data))
@@ -35,7 +37,56 @@ export default function CreateJobPosting() {
     useEffect(() => {
         window.scrollTo(0, 0)   //sayfanın tepesine çıkmamıza yarar
     }, [])
-    //let osman = parseInt(id);
+
+    const jobPostingService = new JobPostingService();
+
+    const SignupSchema = Yup.object().shape({
+
+        city: Yup.object().required("Şehir Boş Bırakılamaz"),
+        description: Yup.string().required("Başlık Alanı Boş Bırakılamaz"),
+        endedDate: Yup.date().required("İlan Bitiş Tarihi Boş Bırakılamaz"),
+        jobTitle: Yup.object().required("Departman boş bırakılamaz"),
+        maxSalary: Yup.string().matches(/^[0-9]+$/, "Sadece rakam olmalıdır."),
+        minSalary: Yup.string().matches(/^[0-9]+$/, "Sadece rakam olmalıdır."),
+        openPositing: Yup.number().typeError("Lütfen Sayı Giriniz").required("Pozisyon Sayısı Boş Bırakılamaz"),
+        wayOfWorking: Yup.string().required("Çalışma biçimi boş bırakılamaz"),
+    });
+    /******/
+    const formik = useFormik({
+        initialValues: {
+
+            city: {
+                id: ''
+            },
+            description: '',
+            employer: {
+                id: parseInt(id),
+            },
+            endedDate: '',
+            jobTitle: {
+                id: ''
+            },
+            maxSalary: '',
+            minSalary: '',
+            openPositing: '',
+            wayOfWorking: '',
+        },
+        validationSchema: SignupSchema,
+        onSubmit: values => {
+            jobPostingService.add(values).then();
+            //alert(JSON.stringify(values, null, 2))
+        },
+    });
+    /*********/
+
+    const handleChangeSemantic = (value, fieldName) => {
+        formik.setFieldValue(fieldName, value);
+    }
+
+    const handleRichTextEditorInput = (value) => {
+        formik.setFieldValue("description", value)
+    }
+
     return (
         <div>
 
@@ -62,9 +113,7 @@ export default function CreateJobPosting() {
 
 
 
-
-
-
+                        {/*Sağ kısım */}
                         <div class="col-md-8">
                             <div class="panel panel-default">
                                 <div class="panel-body-right">
@@ -72,145 +121,128 @@ export default function CreateJobPosting() {
                                     <div class="h4 text-center fb mb-4">Yeni İş İlanı {id}</div>
                                     <div class="row pv-lg">
                                         <div class="container">
-                                            <Formik
-                                                initialValues={{
-                                                    /*
-                                                    city:{
-                                                        id:'',
-                                                    },
-                                                    */
-                                                    cityId:'',
-                                                    description: '',
-                                                    employer: {
-                                                        id: parseInt(id),
-                                                    },
-                                                    endedDate: '',
-                                                    // jobTitle->id: '',
-                                                    maxSalary: '',
-                                                    minSalary: '',
-                                                    openPositing: '',
-                                                    //visible: 'false',            
-                                                    wayOfWorking: '',
-                                                }}
-                                                validationSchema={Yup.object({
-
-                                                    /*
-                                                    city: {
-                                                        id: ''
-                                                    },
-                                                    */
-                                                    // city: Yup.string().required("Şehir Boş Bırakılamaz"),
 
 
-                                                  //  cityId: Yup.string().required("Şehir Boş Bırakılamaz"),
-                                                    description: Yup.string().required("Başlık Alanı Boş Bırakılamaz"),
-                                                    endedDate: Yup.date().required("İlan Bitiş Tarihi Boş Bırakılamaz"),
-                                                    maxSalary: Yup.string().matches(/^[0-9]+$/, "Sadece rakam olmalıdır."),
-                                                    minSalary: Yup.string().matches(/^[0-9]+$/, "Sadece rakam olmalıdır."),
-                                                    openPositing: Yup.number().typeError("Lütfen Sayı Giriniz").required("Pozisyon Sayısı Boş Bırakılamaz"),
-                                                    wayOfWorking: Yup.string().required("Çalışma biçimi boş bırakılamaz"),
 
-                                                })}
-                                                onSubmit={(values, { setSubmitting, resetForm }) => {
-                                                    console.log(values);
-                                                    setSubmitting(false);
-                                                    /*
-                                                    setTimeout(() => {
-                                                        setSubmitting(false);
-                                                        resetForm();
-                        
-                                                    }, 2000);
-                                                    */
-                                                }}
-                                            >
+                                            {/*console.log(cities)*/}
 
-                                                {({
-                                                    values,
-                                                    touched,
-                                                    errors,
-                                                    dirty,
-                                                    isSubmitting,
-                                                    handleSubmit,
-                                                    handleReset,
-                                                    handleChange,
-                                                }) => (
+                                            <Form class="form-horizontal ng-pristine ng-valid col-sm-10 m-auto" onSubmit={formik.handleSubmit}>
 
-                                                    <form class="form-horizontal ng-pristine ng-valid col-sm-10 m-auto" onSubmit={handleSubmit}>
-
-
-                                                        <div class="form-group row">
-                                                            <label htmlFor="description" class="col-sm-4 control-label" for="description">Başlık*</label>
-                                                            <div class="col-sm-8">
-                                                                <input class="form-control" id="description" type="text" placeholder="İlan Başlığı Giriniz" value={values.description} onChange={handleChange} />
-                                                                {errors.description && touched.description && (
-                                                                    <div className="input-feedback">{errors.description}</div>)}
-                                                            </div>
+                                                <Form.Field>
+                                                    <div class="form-group row">
+                                                        <label htmlFor="city" class="col-sm-4 control-label" for="endedDate">Şehir*</label>
+                                                        <div class="col-sm-8">
+                                                            <Dropdown
+                                                                placeholder="Şehir Seçiniz"
+                                                                fluid
+                                                                selection
+                                                                search
+                                                                options={cities?.map((x, index) => {
+                                                                    return { text: x.cityName, key: x.index, value: x.id }
+                                                                })}
+                                                                onChange={(event, data) =>
+                                                                    formik.setFieldValue("city[id]", data.value)
+                                                                }
+                                                                value={formik.values.city[id]}
+                                                            />
+                                                            {formik.errors.city && formik.touched.city && (
+                                                                <div className="input-feedback">{formik.errors.city}</div>)}
                                                         </div>
-                                                        <div class="form-group row">
-                                                            <label htmlFor="endedDate" class="col-sm-4 control-label" for="endedDate">Şehir Seçiniz*</label>
-                                                            <div class="col-sm-8">
-                                                                {/*<input class="form-control" id="endedDate" type="text" placeholder=" Alanı Giriniz" value={values.city} onChange={handleChange} />*/}
-                                                                <Dropdown 
-                                                               //     placeholder='Şehir seçiniz' fluid selection search options={city.map((x, index) => {
-                                                                 //       return { text: x.cityName,  }
-                                                                    //})}
-                                                                    //onBlur={formik.onBlur}
-                                                                   /* onChange={(event, data) => setFieldValue("cityId", data.value)}/*id="cityId"*/ value={values.cityId}
-                                                                />
-                                                                
-                                                                {errors.endedDate && touched.endedDate && (
-                                                                    <div className="input-feedback">{errors.endedDate}</div>)}
-                                                            </div>
+                                                    </div>
+                                                </Form.Field>
+                                                <Form.Field>
+                                                    <div class="form-group row">
+                                                        <label htmlFor="description" class="col-sm-4 control-label" for="description">İlan Başlığı*</label>
+                                                        <div class="col-sm-8">
+                                                            <input class="form-control" id="description" row="4" type="text" placeholder="Başlık Giriniz" value={formik.values.description} onChange={formik.handleChange} />
+                                                            {formik.errors.description && formik.touched.description && (
+                                                                <div className="input-feedback">{formik.errors.description}</div>)}
                                                         </div>
-                                                        <div class="form-group row">
-                                                            <label htmlFor="endedDate" class="col-sm-4 control-label" for="endedDate">Bitiş Tarihi*</label>
-                                                            <div class="col-sm-8">
-                                                                <input class="form-control" id="endedDate" type="date" placeholder="Bitiş Tarihi Giriniz" value={values.endedDate} onChange={handleChange} />
-                                                                {errors.endedDate && touched.endedDate && (
-                                                                    <div className="input-feedback">{errors.endedDate}</div>)}
-                                                            </div>
+                                                    </div>
+                                                </Form.Field>
+                                                <Form.Field>
+                                                    <div class="form-group row">
+                                                        <label htmlFor="endedDate" class="col-sm-4 control-label" for="endedDate">Bitiş Tarihi*</label>
+                                                        <div class="col-sm-8">
+                                                            <input class="form-control" id="endedDate" type="date" placeholder="Bitiş Tarihi Giriniz" value={formik.values.endedDate} onChange={formik.handleChange} />
+                                                            {formik.errors.endedDate && formik.touched.endedDate && (
+                                                                <div className="input-feedback">{formik.errors.endedDate}</div>)}
                                                         </div>
-                                                        <div class="form-group row">
-                                                            <label htmlFor="minSalary" class="col-sm-4 control-label" for="minSalary">Maaş Alt Aralığı</label>
-                                                            <div class="col-sm-8">
-                                                                <input class="form-control" id="minSalary" type="text" placeholder="Maaş Alt Aralığı Giriniz" value={values.minSalary} onChange={handleChange} />
-                                                                {errors.minSalary && touched.minSalary && (
-                                                                    <div className="input-feedback">{errors.minSalary}</div>)}
-                                                            </div>
+                                                    </div>
+                                                </Form.Field>
+                                                <Form.Field>
+                                                    <div class="form-group row">
+                                                        <label htmlFor="jobTitle" class="col-sm-4 control-label" for="jobTitle">Departman*</label>
+                                                        <div class="col-sm-8">
+                                                            <Dropdown
+                                                                placeholder="Departman Seçiniz"
+                                                                fluid
+                                                                selection
+                                                                search
+                                                                options={jobTitle?.map((x, index) => {
+                                                                    return { text: x.title, key: x.index, value: x.id }
+                                                                })}
+                                                                onChange={(event, data) =>
+                                                                    formik.setFieldValue("jobTitle[id]", data.value)
+                                                                }
+                                                                value={formik.values.jobTitle[id]}
+                                                            />
+                                                            {formik.errors.jobTitle && formik.touched.jobTitle && (
+                                                                <div className="input-feedback">{formik.errors.jobTitle}</div>)}
                                                         </div>
-                                                        <div class="form-group row">
-                                                            <label htmlFor="maxSalary" class="col-sm-4 control-label" for="maxSalary">Maaş Üst Aralığı </label>
-                                                            <div class="col-sm-8">
-                                                                <input class="form-control" id="maxSalary" type="text" placeholder="Maaş Üst Aralığı Giriniz" value={values.maxSalary} onChange={handleChange} />
-                                                                {errors.maxSalary && touched.maxSalary && (
-                                                                    <div className="input-feedback">{errors.maxSalary}</div>)}
-                                                            </div>
+                                                    </div>
+                                                </Form.Field>
+                                                <Form.Field>
+                                                    <div class="form-group row">
+                                                        <label htmlFor="minSalary" class="col-sm-4 control-label" for="minSalary">Maaş Alt Aralığı</label>
+                                                        <div class="col-sm-8">
+                                                            <input class="form-control" id="minSalary" type="text" placeholder="Maaş Alt Aralığı Giriniz" value={formik.values.minSalary} onChange={formik.handleChange} />
+                                                            {formik.errors.minSalary && formik.touched.minSalary && (
+                                                                <div className="input-feedback">{formik.errors.minSalary}</div>)}
                                                         </div>
-                                                        <div class="form-group row">
-                                                            <label htmlFor="openPositing" class="col-sm-4 control-label" for="openPositing">Açık Pozisyon*</label>
-                                                            <div class="col-sm-8">
-                                                                <input class="form-control" id="openPositing" row="4" type="number" placeholder="Açık Pozisyon Sayısını Giriniz" value={values.openPositing} onChange={handleChange} />
-                                                                {errors.openPositing && touched.openPositing && (
-                                                                    <div className="input-feedback">{errors.openPositing}</div>)}
-                                                            </div>
+                                                    </div>
+                                                </Form.Field>
+                                                <Form.Field>
+                                                    <div class="form-group row">
+                                                        <label htmlFor="maxSalary" class="col-sm-4 control-label" for="maxSalary">Maaş Üst Aralığı </label>
+                                                        <div class="col-sm-8">
+                                                            <input class="form-control" id="maxSalary" type="text" placeholder="Maaş Üst Aralığı Giriniz" value={formik.values.maxSalary} onChange={formik.handleChange} />
+                                                            {formik.errors.maxSalary && formik.touched.maxSalary && (
+                                                                <div className="input-feedback">{formik.errors.maxSalary}</div>)}
                                                         </div>
-                                                        <div class="form-group row">
-                                                            <label htmlFor="wayOfWorking" class="col-sm-4 control-label" for="wayOfWorking">Çalışma Biçimi*</label>
-                                                            <div class="col-sm-8">
-                                                                <input class="form-control" id="wayOfWorking" row="4" type="text" placeholder="Çalışma Biçmi Giriniz" value={values.wayOfWorking} onChange={handleChange} />
-                                                                {errors.wayOfWorking && touched.wayOfWorking && (
-                                                                    <div className="input-feedback">{errors.wayOfWorking}</div>)}
-                                                            </div>
+                                                    </div>
+                                                </Form.Field>
+                                                <Form.Field>
+                                                    <div class="form-group row">
+                                                        <label htmlFor="openPositing" class="col-sm-4 control-label" for="openPositing">Açık Pozisyon*</label>
+                                                        <div class="col-sm-8">
+                                                            <input class="form-control" id="openPositing" row="4" type="number" placeholder="Açık Pozisyon Sayısını Giriniz" value={formik.values.openPositing} onChange={formik.handleChange} />
+                                                            {formik.errors.openPositing && formik.touched.openPositing && (
+                                                                <div className="input-feedback">{formik.errors.openPositing}</div>)}
                                                         </div>
-                                                        <div class="form-group">
-                                                            <div class="col-sm-offset-2 col-sm-10 col-md-6 btn-update">
-                                                                <button class="btn btn-success w-100 fs-20 btn-lg" type="submit" disabled={!dirty || isSubmitting} >İlan Oluştur    </button>
-                                                            </div>
+                                                    </div>
+                                                </Form.Field>
+                                                <Form.Field>
+                                                    <div class="form-group row">
+                                                        <label htmlFor="wayOfWorking" class="col-sm-4 control-label" for="wayOfWorking">Çalışma Biçimi*</label>
+                                                        <div class="col-sm-8">
+                                                            <input class="form-control" id="wayOfWorking" row="4" type="text" placeholder="Çalışma Biçmi Giriniz" value={formik.values.wayOfWorking} onChange={formik.handleChange} />
+                                                            {formik.errors.wayOfWorking && formik.touched.wayOfWorking && (
+                                                                <div className="input-feedback">{formik.errors.wayOfWorking}</div>)}
                                                         </div>
+                                                    </div>
+                                                </Form.Field>
+                                                <div class="form-group">
+                                                    <div class="col-sm-offset-2 col-sm-10 col-md-6 btn-update">
+                                                        <button class="btn btn-success w-100 fs-20 btn-lg" type="submit" disabled={!formik.dirty /*||*/ && formik.isSubmitting} >İlan Oluştur    </button>
+                                                    </div>
+                                                </div>
 
-                                                    </form>
-                                                )}
-                                            </Formik>
+                                            </Form>
+
+
+
+
                                         </div>
                                     </div>
                                 </div>

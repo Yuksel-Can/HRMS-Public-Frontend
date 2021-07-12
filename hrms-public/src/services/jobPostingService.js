@@ -20,4 +20,7 @@ export default class JobPostingService{
     findByIsVisibleAndId(id){
         return axios.get("http://localhost:8080/api/jobposting/findByIsVisibleAndId?id="+id)
     }
+    add(values){
+        return axios.post("http://localhost:8080/api/jobposting/add", values);
+    }
 }
