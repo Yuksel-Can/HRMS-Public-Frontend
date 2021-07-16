@@ -30,12 +30,12 @@ export default function JobPostingDetailLeft() {
         <div>
             <div class="project-info-box-left">
 
-                {jobPosting.wayOfWorking}
+               
 
                 <p><b>İlan Numarası:</b> <br />{"0" + jobPosting.id}{"0" + jobPosting.id} </p>
                 <p><b>İlan Pozisyonu:</b><br />{jobPosting.jobTitle?.title}</p>
-                <p><b>Çalışma Zamanı:</b><br />Tam Zamanlı*</p>
-                <p><b>Çalışma Biçimi:</b><br /> {jobPosting.wayOfWorking}</p>
+                <p><b>Çalışma Zamanı:</b><br />{jobPosting.workingTime?.name}</p>
+                <p><b>Çalışma Biçimi:</b><br /> {jobPosting.wayOfWorking?.name}</p>
                 <p><b>İlan Başlama Tarihi:  </b><br /> {jobPosting.startedDate}</p>
                 <p><b>İlan Bitiş Tarihi:     </b><br /> {jobPosting.endedDate}</p>
                 <p><b>İstihdam:</b><br /> {jobPosting.openPosition}</p>

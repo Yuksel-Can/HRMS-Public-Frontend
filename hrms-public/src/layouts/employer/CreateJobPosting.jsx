@@ -49,7 +49,8 @@ export default function CreateJobPosting() {
         maxSalary: Yup.string().matches(/^[0-9]+$/, "Sadece rakam olmalıdır."),
         minSalary: Yup.string().matches(/^[0-9]+$/, "Sadece rakam olmalıdır."),
         openPositing: Yup.number().typeError("Lütfen Sayı Giriniz").required("Pozisyon Sayısı Boş Bırakılamaz"),
-        wayOfWorking: Yup.string().required("Çalışma biçimi boş bırakılamaz"),
+        wayOfWorking: Yup.object().required("Çalışma biçimi boş bırakılamaz"),
+        workingTime: Yup.object().required("Çalışma zamanı boş bırakılamaz"),
     });
     /******/
     const formik = useFormik({
@@ -69,12 +70,17 @@ export default function CreateJobPosting() {
             maxSalary: '',
             minSalary: '',
             openPositing: '',
-            wayOfWorking: '',
+            wayOfWorking:{
+                id: ''
+            },
+            workingTime:{
+                id: ''
+            }
         },
         validationSchema: SignupSchema,
         onSubmit: values => {
-            jobPostingService.add(values).then();
-            //alert(JSON.stringify(values, null, 2))
+           // jobPostingService.add(values).then();
+            alert(JSON.stringify(values, null, 2))
         },
     });
     /*********/
@@ -226,12 +232,49 @@ export default function CreateJobPosting() {
                                                     <div class="form-group row">
                                                         <label htmlFor="wayOfWorking" class="col-sm-4 control-label" for="wayOfWorking">Çalışma Biçimi*</label>
                                                         <div class="col-sm-8">
-                                                            <input class="form-control" id="wayOfWorking" row="4" type="text" placeholder="Çalışma Biçmi Giriniz" value={formik.values.wayOfWorking} onChange={formik.handleChange} />
+                                                            <Dropdown
+                                                                placeholder="Çalışma Biçimi Seçiniz"
+                                                                fluid
+                                                                selection
+                                                                search
+                                                                options={wayOfWorking?.map((x, index) => {
+                                                                    return { text: x.title, key: x.index, value: x.id }
+                                                                })}
+                                                                onChange={(event, data) =>
+                                                                    formik.setFieldValue("wayOfWorking[id]", data.value)
+                                                                }
+                                                                value={formik.values.wayOfWorking[id]}
+                                                            />
                                                             {formik.errors.wayOfWorking && formik.touched.wayOfWorking && (
                                                                 <div className="input-feedback">{formik.errors.wayOfWorking}</div>)}
                                                         </div>
                                                     </div>
                                                 </Form.Field>
+                                                <Form.Field>
+                                                    <div class="form-group row">
+                                                        <label htmlFor="workingTime" class="col-sm-4 control-label" for="workingTime">Departman*</label>
+                                                        <div class="col-sm-8">
+                                                            <Dropdown
+                                                                placeholder="Departman Seçiniz"
+                                                                fluid
+                                                                selection
+                                                                search
+                                                                options={workingTime?.map((x, index) => {
+                                                                    return { text: x.title, key: x.index, value: x.id }
+                                                                })}
+                                                                onChange={(event, data) =>
+                                                                    formik.setFieldValue("workingTime[id]", data.value)
+                                                                }
+                                                                value={formik.values.workingTime[id]}
+                                                            />
+                                                            {formik.errors.workingTime && formik.touched.workingTime && (
+                                                                <div className="input-feedback">{formik.errors.workingTime}</div>)}
+                                                        </div>
+                                                    </div>
+                                                </Form.Field>
+
+
+
                                                 <div class="form-group">
                                                     <div class="col-sm-offset-2 col-sm-10 col-md-6 btn-update">
                                                         <button class="btn btn-success w-100 fs-20 btn-lg" type="submit" disabled={!formik.dirty /*||*/ && formik.isSubmitting} >İlan Oluştur    </button>
