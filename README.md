@@ -48,7 +48,7 @@
 ## Employer Settings
 ![alt employersettings1](https://github.com/Yuksel-Can/HRMS-Public-Frontend/blob/main/screenshots/Employer/Employer%20Settings.jpg)
 ![alt employersettings2](https://github.com/Yuksel-Can/HRMS-Public-Frontend/blob/main/screenshots/Employer/Employer%20Settings2.jpg)
-## Another
+## Login Pages
 ![alt navi](https://github.com/Yuksel-Can/HRMS-Public-Frontend/blob/main/screenshots/main/navi.jpg)
 
 
