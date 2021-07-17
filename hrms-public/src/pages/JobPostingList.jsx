@@ -59,7 +59,7 @@ export default function JobPostingList() {
                                         jobPostings.map(jobPosting => (
                                             <tr key={jobPosting.id}>
                                                 <td>
-                                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png"
                                                         alt="avatar1" />
                                                     <a href="/#" class="user-link">
                                                         {/*   
@@ -108,7 +108,7 @@ export default function JobPostingList() {
                                     }
                                     <tr>
                                         <td>
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                            <img src="https://bootdey.com/img/Content/avatar/avatar3.png"
                                                 alt="avatar2" />
                                             <a href="/#" class="user-link">Geliştirici
                                                 Aranıyoruz</a>
@@ -137,7 +137,7 @@ export default function JobPostingList() {
                                     </tr>
                                     <tr>
                                         <td >
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                                            <img src="https://bootdey.com/img/Content/avatar/avatar6.png"
                                                 alt="avatar3" />
                                             <a href="/#" class="user-link">Geliştirici
                                                 Aranıyoruz</a>

@@ -5,6 +5,8 @@ import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import JobPostingService from '../services/jobPostingService';
+
+import 'semantic-ui-css/semantic.min.css'
 export default function JobPostingDetail() {
 
     let { id } = useParams();

@@ -5,6 +5,8 @@ import { useParams } from 'react-router-dom'
 import EmployerService from '../../services/employerService';
 import JobTitleService from '../../services/jobTitleService';
 import JobPostingService from '../../services/jobPostingService';
+import WayOfWorkingService from '../../services/wayOfWorking';
+import WorkingTimeService from '../../services/workingTime';
 import CityService from '../../services/cityService';
 import build from '../../assets/images/build.jpg';
 import { useFormik } from 'formik';
@@ -20,6 +22,8 @@ export default function CreateJobPosting() {
     const [employer, setEmployer] = useState({});
     const [cities, setCities] = useState([]);
     const [jobTitle, setJobTitle] = useState([]);
+    const [wayOfWorkings, setWayOfWorkings] = useState([]);
+    const [workingTimes, setWorkingTimes] = useState([]);
 
     useEffect(() => {
         let employerService = new EmployerService()
@@ -31,6 +35,12 @@ export default function CreateJobPosting() {
 
         let jobTitleService = new JobTitleService()
         jobTitleService.getAllJobTitle().then(result => setJobTitle(result.data.data))
+
+        let wayOfWorkingService = new WayOfWorkingService()
+        wayOfWorkingService.getAllWayOfWorking().then(result => setWayOfWorkings(result.data.data))
+
+        let workingTimeService = new WorkingTimeService()
+        workingTimeService.getAllWorkingTime().then(result => setWorkingTimes(result.data.data))
 
     }, [])
 
@@ -79,8 +89,9 @@ export default function CreateJobPosting() {
         },
         validationSchema: SignupSchema,
         onSubmit: values => {
-           // jobPostingService.add(values).then();
-            alert(JSON.stringify(values, null, 2))
+            jobPostingService.add(values).then(alert("İlan Başarıyla Eklendi"));
+
+           // alert(JSON.stringify(values, null, 2))
         },
     });
     /*********/
@@ -237,8 +248,8 @@ export default function CreateJobPosting() {
                                                                 fluid
                                                                 selection
                                                                 search
-                                                                options={wayOfWorking?.map((x, index) => {
-                                                                    return { text: x.title, key: x.index, value: x.id }
+                                                                options={wayOfWorkings?.map((x, index) => {
+                                                                    return { text: x.name, key: x.index, value: x.id }
                                                                 })}
                                                                 onChange={(event, data) =>
                                                                     formik.setFieldValue("wayOfWorking[id]", data.value)
@@ -252,15 +263,15 @@ export default function CreateJobPosting() {
                                                 </Form.Field>
                                                 <Form.Field>
                                                     <div class="form-group row">
-                                                        <label htmlFor="workingTime" class="col-sm-4 control-label" for="workingTime">Departman*</label>
+                                                        <label htmlFor="workingTime" class="col-sm-4 control-label" for="workingTime">Çalışma Zamanı*</label>
                                                         <div class="col-sm-8">
                                                             <Dropdown
-                                                                placeholder="Departman Seçiniz"
+                                                                placeholder="Departman Zamanı"
                                                                 fluid
                                                                 selection
                                                                 search
-                                                                options={workingTime?.map((x, index) => {
-                                                                    return { text: x.title, key: x.index, value: x.id }
+                                                                options={workingTimes?.map((x, index) => {
+                                                                    return { text: x.name, key: x.index, value: x.id }
                                                                 })}
                                                                 onChange={(event, data) =>
                                                                     formik.setFieldValue("workingTime[id]", data.value)

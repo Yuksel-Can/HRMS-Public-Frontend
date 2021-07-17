@@ -24,7 +24,7 @@
 body {
   font-weight: normal;
   font-style: normal;
-  background-color: #cecece4d;
+  background-color: #cecece4d !important;
   box-sizing: border-box !important;
 	font:600 16px/18px 'Open Sans',sans-serif !important;
 }
@@ -88,7 +88,7 @@ h3 a,
 h4 a,
 h5 a,
 h6 a {
-  color: inherit;
+  color: inherit !important;
 }
 
 /* line 52, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_reset.scss */
