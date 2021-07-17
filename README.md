@@ -5,7 +5,7 @@
 
  ``` 'HRMSPUBLIC', Java Spring Framework ile geliştirilmiş genel bir web projesidir. Araçlar: Java Spring-Hibernate-Maven-Spring Boot-MVC-RestAPI-JSON-Dev Tools-JPA-AOP-DTO-PostgreSQL ```
 
-:point_right: It is the front-end design and architecture of the 'HRMS-Public' project with React.js. Tools: Javascript-NodeJS-React-JSX-Semantic UI React-hooks-Routher-Axios-React Bootstrap
+:point_right: It is the front-end design and architecture of the 'HRMS-Public' project with React.js. Tools: **Javascript-NodeJS-React-JSX-Semantic UI React-hooks-Routher-Axios-React Bootstrap**
 <br/>
  ``` React.js ile geliştirilen 'HRMS-Public' projesinin çalışma mimarisi ve Frontend tasarımıdır. Araçlar: Javascript-NodeJS-React-JSX-Semantic UI React-Hooks-Routher-Axios-React Bootstrap```
 <br/>
