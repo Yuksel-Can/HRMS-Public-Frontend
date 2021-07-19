@@ -50,7 +50,7 @@
 ![alt employersettings2](https://github.com/Yuksel-Can/HRMS-Public-Frontend/blob/main/screenshots/Employer/Employer%20Settings2.jpg)
 ## Login Pages
 ![alt navi](https://github.com/Yuksel-Can/HRMS-Public-Frontend/blob/main/screenshots/main/navi.jpg)
-
+## Login Pages
 
 # Getting Started with Create React App
 
