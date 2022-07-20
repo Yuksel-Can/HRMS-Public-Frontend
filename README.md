@@ -1,14 +1,22 @@
+<div align="center"><h1> ⭐ Human Resources Management System ⭐ </h1> </div>
+<div align="center"><h2> 👨‍🎓👩‍🎓 İnsan Kaynakları Yönetim Sistemi 👩‍🎓👨‍🎓 </h2> </div>
 
-<div align="center"><h1>Human Resources Management System</h1> </div>
-<div align="center"><h2> :exclamation: İnsan Kaynakları Yönetim Sistemi :exclamation: </h2> </div>
-:point_right: 'HRMSPUBLIC' is a public web project developed with the Java Spring Framework. Tools: Java Spring-Hibernate-Maven-Spring Boot-MVC-RestAPI-JSON-Dev Tools-JPA-AOP-PostgreSQL
-
+:point_right: 'HRMSPUBLIC' is a public web project developed with the Java Spring Framework. Tools: **Java Spring-Hibernate-Maven-Spring Boot-MVC-RestAPI-JSON-Dev Tools-JPA-AOP-PostgreSQL**
+<br/>
  ``` 'HRMSPUBLIC', Java Spring Framework ile geliştirilmiş genel bir web projesidir. Araçlar: Java Spring-Hibernate-Maven-Spring Boot-MVC-RestAPI-JSON-Dev Tools-JPA-AOP-DTO-PostgreSQL ```
 
 :point_right: It is the front-end design and architecture of the 'HRMS-Public' project with React.js. Tools: **Javascript-NodeJS-React-JSX-Semantic UI React-hooks-Routher-Axios-React Bootstrap-Formik**
 <br/>
  ``` React.js ile geliştirilen 'HRMS-Public' projesinin çalışma mimarisi ve Frontend tasarımıdır. Araçlar: Javascript-NodeJS-React-JSX-Semantic UI React-Hooks-Routher-Axios-React Bootstrap-Formik```
 <br/>
+
+---
+
+<b><h2> :star: Click for Backend Codes: :point_right: <a href="https://github.com/Yuksel-Can/HRMS-Public-Backend">BACK-END CODE </a> :point_left: </h2></b> 
+``` Backend Kodları İçin Tıklayınız: ```
+
+---
+
 # Component Diagram
 ## Working Principle Uml Component Diagram
 ![alt workingPrincipleUmlComponentDiagram](https://github.com/Yuksel-Can/HRMS-Public-Frontend/blob/main/uml%20diagrams/working%20principle%20uml%20component%20diagram.jpg)
